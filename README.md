@@ -1,1 +1,1 @@
-The node_modules file was too large to export here, however I do have it on my local drive 
+YelpCamp is a website where users can create and review campgrounds. In order to review or create a campground, you must have an account. 
