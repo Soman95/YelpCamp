@@ -1,6 +1,5 @@
 const User = require('../models/user');
 
-
 module.exports.renderRegister = (req, res) => {
     res.render('users/register');
 }
@@ -11,7 +10,7 @@ module.exports.register = async (req, res, next) => {
         const user = new User({ email, username });
         const registeredUser = await User.register(user, password);
         req.login(registeredUser, err => {
-            if (err) return next(err)
+            if (err) return next(err);
             req.flash('success', 'Welcome to Yelp Camp!');
             res.redirect('/campgrounds');
         })
@@ -33,7 +32,7 @@ module.exports.login = (req, res) => {
 }
 
 module.exports.logout = (req, res) => {
-    req.logOut();
-    req.flash('success', 'Goodbye');
+    req.logout();
+    req.flash('success', "Goodbye!");
     res.redirect('/campgrounds');
 }
